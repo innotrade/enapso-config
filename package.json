@@ -1,5 +1,5 @@
 {
-  "name": "enapso-config",
+  "name": "@innotrade/enapso-config",
   "version": "1.0.0",
   "description": "ENAPSO Hierarchical Enterprise Configuration Management",
   "main": "index.js",
@@ -23,5 +23,6 @@
   "homepage": "https://github.com/innotrade/enapso-config#readme",
   "dependencies": {
     "dotenv": "^8.2.0"
-  }
+  },
+  "devDependencies": {}
 }
