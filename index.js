@@ -4,9 +4,8 @@
 
 require('dotenv').config();
 process.env.ENAPSO_CONFIG_FILE =
-    process.env.ENAPSO_CONFIG_FILE || '/config/enapso_config.js';
-const config = new (require(process.cwd() +
-    process.env.ENAPSO_CONFIG_FILE).config)();
+    process.env.ENAPSO_CONFIG_FILE || './config/enapso_config.js';
+const config = new (require(process.env.ENAPSO_CONFIG_FILE).config)();
 
 module.exports = {
     config
