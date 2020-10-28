@@ -1,4 +1,10 @@
-// this is the root config file
+// Innotrade Enapso - ENAPSO Enterprise Configuration Management
+// (C) Copyright 2019-2020 Innotrade GmbH, Herzogenrath, NRW, Germany
+// Author: Alexander Schulze
+
+// this is the root configuration file across all entities
+// here only vendor, platform, developer and machine independant configurations should be maintained
+
 const { EnapsoConfig } = require('./enapso_config');
 
 class RootConfig extends EnapsoConfig {
