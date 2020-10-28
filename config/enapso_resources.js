@@ -1,10 +1,10 @@
 const { DepartmentConfig } = require('./department_config');
 
-class ExtJsAssistantConfig extends DepartmentConfig {
+class EnapsoResourcesConfig extends DepartmentConfig {
     constructor(data) {
         super(data);
         this.application = {
-            name: 'ENAPSO\u26A1boost - ExtJS-Assistant',
+            name: 'ENAPSO\u26A1boost - Resource Manager',
             version: '1.0.0',
             copyrightFrom: '2019',
             copyrightTo: '2020'
@@ -15,24 +15,8 @@ class ExtJsAssistantConfig extends DepartmentConfig {
             apiPath: '/api/enapso/objects/v1'
         };
 
-        this.client = {
-            proxy: {
-                idParam: 'iri',
-                reader: {
-                    rootProperty: 'records'
-                },
-                writer: {
-                    rootProperty: 'records'
-                }
-            }
-        };
-
         this.generator = {
-            appName: 'MyApp',
             globalTarget: this.getGlobalTarget(),
-            modelTarget: `${this.getGlobalTarget()}/model`,
-            storeTarget: `${this.getGlobalTarget()}/store`,
-            viewTarget: `${this.getGlobalTarget()}/view`,
             fileHeader: `/* --------------------------------------------------------------
  * ENAPSO\u26A1boost auto-generated file, do not modify manually!
  * -------------------------------------------------------------- */\n\n`
@@ -47,6 +31,6 @@ class ExtJsAssistantConfig extends DepartmentConfig {
 }
 
 module.exports = {
-    ExtJsAssistantConfig,
-    config: ExtJsAssistantConfig
+    EnapsoResourcesConfig,
+    config: EnapsoResourcesConfig
 };
