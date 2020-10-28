@@ -1,3 +1,10 @@
+// Innotrade Enapso - ENAPSO Enterprise Configuration Management
+// (C) Copyright 2019-2020 Innotrade GmbH, Herzogenrath, NRW, Germany
+// Author: Alexander Schulze
+
+// this is the company/enterprise configuration file across all business units, subsidiaries and departments
+// here only configurations across an entire company/enterprise (headquarter) should be maintained
+
 const { RootConfig } = require('./root_config');
 
 class CompanyConfig extends RootConfig {
