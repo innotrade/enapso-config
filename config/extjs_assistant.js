@@ -12,7 +12,11 @@ class ExtJsAssistantConfig extends DepartmentConfig {
 
         this.backend = {
             baseUrl: 'http://localhost:3000',
-            apiPath: '/api/enapso/objects/v1'
+            apiPath: '/api/enapso/objects/v1',
+            createPath: '/create',
+            readPath: '/read',
+            updatePath: '/update',
+            deletePath: '/delete'
         };
 
         this.client = {

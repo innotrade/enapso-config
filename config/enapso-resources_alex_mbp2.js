@@ -2,11 +2,7 @@
 
 const { EnapsoResourcesConfig } = require('./enapso_resources');
 
-class EnapsoResourcesAlexMbp2Config extends EnapsoResourcesConfig {
-    getGlobalTarget() {
-        return '/System/Volumes/Data/git/enapso-frontend/Modern/res';
-    }
-}
+class EnapsoResourcesAlexMbp2Config extends EnapsoResourcesConfig {}
 
 module.exports = {
     EnapsoResourcesAlexMbp2Config,
