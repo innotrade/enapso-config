@@ -25,6 +25,7 @@ class EnapsoResourcesAsheshPc1Config extends EnapsoResourcesConfig {
             baseIRI: 'http://ont.enapso.com/foundation#',
             context: 'http://ont.enapso.com/foundation',
             cls: 'http://ont.enapso.com/foundation#Resource',
+            schema: 'Test',
             joins: [
                 {
                     cls: 'http://ont.enapso.com/foundation#Capability',
@@ -111,7 +112,7 @@ class EnapsoResourcesAsheshPc1Config extends EnapsoResourcesConfig {
             },
             updateRecord: {
                 iri: 'http://ont.enapso.com/foundation#00a5e37f_3452_4b48',
-                name: 'New Test Company',
+                name: 'Updated Test Company',
                 uuid: '12345tyuiigfds',
                 dataId: 'hgfdsdddddd',
                 hash: 'Tqwerhvh',
@@ -129,7 +130,7 @@ class EnapsoResourcesAsheshPc1Config extends EnapsoResourcesConfig {
                 {
                     key: '$sparql',
                     value:
-                        'regEx(str(?ind), "http://ont.enapso.com/foundation#Resource_124ccf70_38eb_4ca0_9f7e_380c65a5a36e", "i")'
+                        'regEx(str(?ind), "http://ont.enapso.com/foundation#00a5e37f_3452_4b48", "i")'
                 }
             ]
         };
