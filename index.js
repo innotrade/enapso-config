@@ -7,6 +7,10 @@ process.env.ENAPSO_CONFIG_FILE =
     process.env.ENAPSO_CONFIG_FILE || './config/enapso_config.js';
 const config = new (require(process.env.ENAPSO_CONFIG_FILE).config)();
 
+global.encfg = {
+    config
+};
+
 module.exports = {
     config
 };
