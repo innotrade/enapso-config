@@ -16,7 +16,7 @@ class EnapsoResourcesConfig extends DepartmentConfig {
         };
 
         this.generator = {
-            globalTarget: this.getGlobalTarget(),
+            outputFolder: process.cwd() + '/out',
             fileHeader: `/* --------------------------------------------------------------
  * ENAPSO\u26A1boost auto-generated file, do not modify manually!
  * -------------------------------------------------------------- */\n\n`

@@ -92,46 +92,6 @@ class EnapsoResourcesAsheshPc1Config extends EnapsoResourcesConfig {
                         }
                     ]
                 }
-            ],
-            iri: 'http://ont.enapso.com/foundation#00a5e37f_3452_4b48',
-            createRecord: {
-                iri: 'http://ont.enapso.com/foundation#00a5e37f_3452_4b48',
-                name: 'New Test Company',
-                uuid: '12345tyuiigfds',
-                dataId: 'hgfdsdddddd',
-                hash: 'Tqwerhvh',
-                rights: 'rwx',
-                code: 'function(option){console.log(option)}',
-                user: 'jnhgtresss',
-                hasCapabilities:
-                    'enf:Capability_00a5e37f_3452_4b48_8a0a_3089dc41ef47',
-                hasAttributes:
-                    'http://ont.enapso.com/foundation#Attribute_5ed0a3d9_a801_4c4b_a072_578090f60353',
-                hasBehavior:
-                    'http://ont.enapso.com/foundation#Behavior_03e35a1d_5dd2_44fd_a596_908a1474dec8'
-            },
-            updateRecord: {
-                iri: 'http://ont.enapso.com/foundation#00a5e37f_3452_4b48',
-                name: 'Updated Test Company',
-                uuid: '12345tyuiigfds',
-                dataId: 'hgfdsdddddd',
-                hash: 'Tqwerhvh',
-                rights: 'rwx',
-                code: 'function(option){console.log(option)}',
-                user: 'jnhgtresss',
-                hasCapabilities:
-                    'enf:Capability_00a5e37f_3452_4b48_8a0a_3089dc41ef47',
-                hasAttributes:
-                    'http://ont.enapso.com/foundation#Attribute_5ed0a3d9_a801_4c4b_a072_578090f60353',
-                hasBehavior:
-                    'http://ont.enapso.com/foundation#Behavior_03e35a1d_5dd2_44fd_a596_908a1474dec8'
-            },
-            filter: [
-                {
-                    key: '$sparql',
-                    value:
-                        'regEx(str(?ind), "http://ont.enapso.com/foundation#00a5e37f_3452_4b48", "i")'
-                }
             ]
         };
     }
