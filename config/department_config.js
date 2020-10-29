@@ -21,12 +21,12 @@ class DepartmentConfig extends CompanyConfig {
 
     getPkgRef(pkgRef) {
         if (
-            this.mode === 'dev' &&
+            this.config.mode === 'dev' &&
             pkgRef &&
-            this.packages &&
-            this.packages[pkgRef]
+            this.config.packages &&
+            this.config.packages[pkgRef]
         ) {
-            return this.packages[pkgRef][this.mode];
+            return this.config.packages[pkgRef][this.config.mode];
         }
         return pkgRef;
     }
