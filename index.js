@@ -8,9 +8,13 @@ process.env.ENAPSO_CONFIG_FILE =
 const config = new (require(process.env.ENAPSO_CONFIG_FILE).config)();
 
 global.encfg = {
-    config
+    config,
+    setMode: config.setMode,
+    getPkgRef: config.getPkgRef
 };
 
 module.exports = {
-    config
+    config,
+    setMode: config.setMode,
+    getPkgRef: config.getPkgRef
 };

@@ -13,6 +13,16 @@ class EnapsoConfig {
     constructor(data) {
         this.vendor = 'ENAPSO Configuration Manager';
         this.version = '1.0';
+
+        this.mode = 'default';
+    }
+
+    setMode(mode) {
+        if (mode === 'dev' || mode === 'default') {
+            this.mode = mode;
+            return true;
+        }
+        return false;
     }
 }
 
