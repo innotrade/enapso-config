@@ -15,6 +15,8 @@ global.encfg = {
     getPkgRef: config.getPkgRef
 };
 
+global.requireEx = config.getPkgRef;
+
 module.exports = {
     config,
     setMode: config.setMode,
