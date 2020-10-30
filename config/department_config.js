@@ -15,11 +15,20 @@ class DepartmentConfig extends CompanyConfig {
         this.packages = {
             '@innotrade/enapso-jsast': {
                 dev: path.normalize(module.path + '/../../enapso-jsast')
+            },
+            '@innotrade/enapso-resources': {
+                dev: path.normalize(module.path + '/../../enapso-resources')
+            },
+            '@innotrade/enapso-wshub': {
+                dev: path.normalize(module.path + '/../../enapso-wshub')
             }
         };
     }
 
     getPkgRef(pkgRef) {
+        // TODO: CHECK THAT!
+        encfg.config.mode = 'dev';
+
         if (
             encfg.config.mode === 'dev' &&
             pkgRef &&
