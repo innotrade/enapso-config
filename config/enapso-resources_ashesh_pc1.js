@@ -1,6 +1,6 @@
 // in this file only machine specific settings should be configured!
 
-const { EnapsoResourcesConfig } = require('./enapso_resources');
+const { EnapsoResourcesConfig } = require('./enapso-resources');
 
 class EnapsoResourcesAsheshPc1Config extends EnapsoResourcesConfig {
     constructor(data) {
