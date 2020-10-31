@@ -21,6 +21,9 @@ class DepartmentConfig extends CompanyConfig {
             },
             '@innotrade/enapso-wshub': {
                 dev: path.normalize(module.path + '/../../enapso-wshub')
+            },
+            '@innotrade/enapso-js-tools': {
+                dev: path.normalize(module.path + '/../../enapso-js-tools')
             }
         };
     }
