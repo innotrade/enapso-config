@@ -24,6 +24,20 @@ class DepartmentConfig extends CompanyConfig {
             },
             '@innotrade/enapso-js-tools': {
                 dev: path.normalize(module.path + '/../../enapso-js-tools')
+            },
+            '@innotrade/enapso-graphdb-client': {
+                dev: path.normalize(
+                    module.path + '/../../enapso-graphdb-client'
+                )
+            },
+            '@innotrade/enapso-graphdb-admin': {
+                dev: path.normalize(module.path + '/../../enapso-graphdb-admin')
+            },
+            '@innotrade/enapso-orm': {
+                dev: path.normalize(module.path + '/../../enapso-orm')
+            },
+            '@innotrade/enapso-sparql-tools': {
+                dev: path.normalize(module.path + '/../../enapso-sparql-tools')
             }
         };
     }
