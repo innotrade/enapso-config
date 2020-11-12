@@ -24,6 +24,21 @@ class EnapsoConfig {
         }
         return false;
     }
+
+    getConfig(path, defaultValue) {
+        const parts = path.split('.');
+        let value = defaultValue;
+        let obj = this.config;
+        while (parts.length > 0) {
+            const field = parts.shift();
+            value = obj[field];
+            if (value === undefined) {
+                break;
+            }
+            obj = obj[field];
+        }
+        return value !== undefined ? value : defaultValue;
+    }
 }
 
 module.exports = {

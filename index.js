@@ -12,6 +12,7 @@ config.setMode(process.env.ENAPSO_CONFIG_MODE);
 global.encfg = {
     config,
     setMode: config.setMode,
+    getConfig: config.getConfig,
     getPkgRef: config.getPkgRef
 };
 
@@ -20,5 +21,6 @@ global.requireEx = config.requireEx;
 module.exports = {
     config,
     setMode: config.setMode,
+    getConfig: config.getConfig,
     getPkgRef: config.getPkgRef
 };
