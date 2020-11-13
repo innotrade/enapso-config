@@ -22,7 +22,10 @@ class EnapsoResourcesConfig extends DepartmentConfig {
  * -------------------------------------------------------------- */\n\n`
         };
 
-        this.classes = ['http://ont.enapso.com/foundation#Resource'];
+        this.classes = [
+            'http://ont.enapso.com/foundation#Resource',
+            'http://ont.enapso.com/foundation#Entity'
+        ];
 
         this.ontology = {
             path: '../ontology/EnapsoFoundation.owl',
