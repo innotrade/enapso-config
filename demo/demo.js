@@ -2,7 +2,7 @@
 // (C) Copyright 2020 Innotrade GmbH, Herzogenrath, NRW, Germany
 // Author: Alexander Schulze
 
-// load ENAPSO Config
+// load ENAPSO config
 require('../index.js');
 
 // ENAPSO config ensures that level is only one of 'log', 'info', 'warn' or 'error'
@@ -20,11 +20,11 @@ console.log(encfg.getCopyrightString('2020', '2020'));
 
 console.log(
     'Reading myDefaultConfig.myDefaultSetting: ' +
-        encfg.getConfig('myDefaultConfig.myDefaultSetting', 'myDefaultValue')
+        encfg.get('myDefaultConfig.myDefaultSetting', 'myDefaultValue')
 );
 console.log(
     'Reading myDefaultConfig.myDefaultSetting2: ' +
-        encfg.getConfig(
+        encfg.get(
             'myDefaultConfig.myDefaultSetting2',
             'Resulting in myDefaultValue2'
         )
@@ -42,15 +42,15 @@ let val;
 
 // switching to development mode
 encfg.setMode(encfg.MODE_DEV);
-val = encfg.getConfig('myModeConfig.switch1', 'Resulting in defaultValue');
+val = encfg.get('myModeConfig.switch1', 'Resulting in defaultValue');
 console.log('(mode: ' + encfg.getMode() + '): ' + val);
 
 // switching to production mode
 encfg.setMode(encfg.MODE_PROD);
-val = encfg.getConfig('myModeConfig.switch1', 'Resulting in defaultValue');
+val = encfg.get('myModeConfig.switch1', 'Resulting in defaultValue');
 console.log('(mode: ' + encfg.getMode() + '): ' + val);
 
 // switching to default mode
 encfg.setMode(encfg.MODE_DEFAULT);
-val = encfg.getConfig('myModeConfig.switch1', 'Resulting in defaultValue');
+val = encfg.get('myModeConfig.switch1', 'Resulting in defaultValue');
 console.log('(mode: ' + encfg.getMode() + '): ' + val);

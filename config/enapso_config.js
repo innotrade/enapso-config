@@ -64,7 +64,7 @@ class EnapsoConfig {
         }
     }
 
-    getConfig(path, defaultValue, options) {
+    get(path, defaultValue, options) {
         // return a configuration setting specified by its path
         // or the default value if the setting does not exist
         const parts = path.split('.');
@@ -86,6 +86,10 @@ class EnapsoConfig {
             obj = obj[field];
         }
         return value !== undefined ? value : defaultValue;
+    }
+
+    getConfig(path, defaultValue, options) {
+        return this.get(path, defaultValue, options);
     }
 
     getPkgRef(pkgRef) {
