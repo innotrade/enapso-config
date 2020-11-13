@@ -24,7 +24,12 @@ class EnapsoConfigDemoConfig extends DepartmentConfig {
         };
 
         this.myModeConfig = {
-            myModeSetting: 'String value for myDefaultConfig.myDefaultSetting'
+            myModeSetting: 'String value for myDefaultConfig.myDefaultSetting',
+            switch1: {
+                $default: 'switch1 default',
+                $dev: 'switch1 in dev mode',
+                $prod: 'switch1 in dev production mode'
+            }
         };
     }
 }

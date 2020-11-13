@@ -19,3 +19,20 @@ console.log(
             'Resulting in myDefaultValue2'
         )
 );
+
+let val;
+
+// switching to production mode
+encfg.setMode(encfg.MODE_PROD);
+val = encfg.getConfig('myModeConfig.switch1', 'Resulting in defaultValue');
+console.log('(mode: ' + encfg.getMode() + '): ' + val);
+
+// switching to development mode
+encfg.setMode(encfg.MODE_PROD);
+val = encfg.getConfig('myModeConfig.switch1', 'Resulting in defaultValue');
+console.log('(mode: ' + encfg.getMode() + '): ' + val);
+
+// switching to default mode
+encfg.setMode(encfg.MODE_DEFAULT);
+val = encfg.getConfig('myModeConfig.switch1', 'Resulting in defaultValue');
+console.log('(mode: ' + encfg.getMode() + '): ' + val);

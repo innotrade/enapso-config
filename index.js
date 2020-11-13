@@ -5,11 +5,13 @@
 // to use local .env file
 require('dotenv').config();
 
+const { EnapsoConfig } = require('./config/enapso_config.js');
 process.env.ENAPSO_CONFIG_FILE =
     process.env.ENAPSO_CONFIG_FILE || './config/enapso_config.js';
 
 // load the configuration from the user, application or machine specific config file
-const config = new (require(process.env.ENAPSO_CONFIG_FILE).config)();
+const configClass = require(process.env.ENAPSO_CONFIG_FILE);
+const config = new configClass.config();
 
 // set the configuration mode
 process.env.ENAPSO_CONFIG_MODE = process.env.ENAPSO_CONFIG_MODE || 'default';
@@ -17,6 +19,10 @@ config.setMode(process.env.ENAPSO_CONFIG_MODE);
 
 const encfg = config;
 encfg.config = config;
+encfg.MODE_DEV = EnapsoConfig.MODE_DEV;
+encfg.MODE_PROD = EnapsoConfig.MODE_PROD;
+encfg.MODE_STAGE = EnapsoConfig.MODE_STAGE;
+encfg.MODE_DEFAULT = EnapsoConfig.MODE_DEFAULT;
 
 // publish the global encfg instance
 global.encfg = encfg;

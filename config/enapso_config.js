@@ -56,6 +56,9 @@ class EnapsoConfig {
         while (parts && parts.length > 0) {
             const field = parts.shift();
             value = obj[field];
+            if (typeof value === 'object' && obj[field]['$' + this.$mode]) {
+                value = obj[field]['$' + this.$mode];
+            }
             if (value === undefined) {
                 if (this.$options.logDefaultUsed) {
                     console.warn(
