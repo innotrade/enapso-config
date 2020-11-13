@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const { EnapsoConfig } = require('./config/enapso_config.js');
 process.env.ENAPSO_CONFIG_FILE =
-    process.env.ENAPSO_CONFIG_FILE || './config/enapso_config.js';
+    process.env.ENAPSO_CONFIG_FILE || './config/root_config.js';
 
 // load the configuration from the user, application or machine specific config file
 const configClass = require(process.env.ENAPSO_CONFIG_FILE.replace(
