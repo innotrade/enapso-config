@@ -41,26 +41,6 @@ class DepartmentConfig extends CompanyConfig {
             }
         };
     }
-
-    getPkgRef(pkgRef) {
-        // TODO: CHECK THAT!
-        encfg.config.mode = 'dev';
-
-        if (
-            encfg.config.mode === 'dev' &&
-            pkgRef &&
-            encfg.config.packages &&
-            encfg.config.packages[pkgRef]
-        ) {
-            return encfg.config.packages[pkgRef][encfg.config.mode];
-        }
-        return pkgRef;
-    }
-
-    requireEx(pkgRef) {
-        pkgRef = encfg.config.getPkgRef(pkgRef);
-        return require(pkgRef);
-    }
 }
 
 module.exports = {

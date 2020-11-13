@@ -1,5 +1,5 @@
 // Innotrade Enapso - ENAPSO Enterprise Configuration Management
-// (C) Copyright 2019-2020 Innotrade GmbH, Herzogenrath, NRW, Germany
+// (C) Copyright 2020 Innotrade GmbH, Herzogenrath, NRW, Germany
 // Author: Alexander Schulze
 
 const { DepartmentConfig } = require('./department_config');
@@ -14,8 +14,17 @@ class EnapsoConfigDemoConfig extends DepartmentConfig {
             copyrightTo: '2020'
         };
 
-        this.sparqlEndpoint = {
-            baseUrl: 'http://localhost:7200'
+        this.packages['@myScope/myPackage'] = {
+            dev: '/git/myPackage'
+        };
+
+        this.myDefaultConfig = {
+            myDefaultSetting:
+                'Configured value for myDefaultConfig.myDefaultSetting'
+        };
+
+        this.myModeConfig = {
+            myModeSetting: 'String value for myDefaultConfig.myDefaultSetting'
         };
     }
 }

@@ -1,5 +1,20 @@
 # ENAPSO&#x26A1;boost - Hierarchical Enterprise Configuration Management
 
+## Intention
+
+ENAPSO Config helps you easily manage your application configuration in enterprise environments.
+
+It enables you
+
+-   to hierachically organize your configuration data to inherit company or department down to user or specific machine level
+-   to easily switch between development, stage or production settings
+-   to use defaults and optionally expose information log in case
+-   to expose warnings or errors in case an application setting is missing
+-   to easily use and maintain local node.js packages without the need to embed them as submodules or even deploy them to npm
+-   to calculate compound configuration settings based on single or other compound settings
+-   to version control your configuration data opposed to environment variables, according to the version specific configuration requirements of your application
+-   to easily track missing configurations in your specific configuration file
+
 The `.env` file in the project root folder just requires a single reference to the configuration file in the form:
 
 ```
@@ -27,6 +42,8 @@ Just require the `@innotrade/enapso-config` package as follows:
 ```javascript
 const { config } = new require('@innotrade/enapso-config');
 ```
+
+require('@innotrade/enapso-config');
 
 and use it where ever you need, with fields or as entire object:
 
