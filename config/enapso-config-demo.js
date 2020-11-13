@@ -31,6 +31,8 @@ class EnapsoConfigDemoConfig extends DepartmentConfig {
                 $prod: 'switch1 in dev production mode'
             }
         };
+
+        this.myAccessToken = process.env.MY_PERSONAL_ACCESS_TOKEN;
     }
 }
 

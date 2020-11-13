@@ -20,6 +20,13 @@ console.log(
         )
 );
 
+// accessing sensitive data from environment variables
+const myAccessToken = encfg.getConfig(
+    'myAccessToken',
+    '[no access token configured]'
+);
+console.log('Accessing sensitive data from env variables: ' + myAccessToken);
+
 let val;
 
 // switching to production mode

@@ -16,7 +16,11 @@ class CompanyConfig extends RootConfig {
             city: 'Herzogenrath',
             zipcode: '52134',
             country: 'Germany',
-            state: 'NRW'
+            state: 'NRW',
+            taxNo: '',
+            vatId: '',
+            registerCourt: '',
+            registerNo: ''
         };
     }
 }
