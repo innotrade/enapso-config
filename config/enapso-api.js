@@ -7,7 +7,7 @@ class EnapsoApiConfig extends DepartmentConfig {
         this.server = {
             redis_host: 'localhost',
             redis_port: '6379',
-            server_port: '6000'
+            server_port: '5000'
         };
 
         this.database = {
