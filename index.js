@@ -10,7 +10,10 @@ process.env.ENAPSO_CONFIG_FILE =
     process.env.ENAPSO_CONFIG_FILE || './config/enapso_config.js';
 
 // load the configuration from the user, application or machine specific config file
-const configClass = require(process.env.ENAPSO_CONFIG_FILE);
+const configClass = require(process.env.ENAPSO_CONFIG_FILE.replace(
+    '${AppRoot}',
+    __dirname
+));
 const config = new configClass.config();
 
 // set the configuration mode

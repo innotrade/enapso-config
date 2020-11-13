@@ -4,28 +4,17 @@
 
 ENAPSO Config helps you easily manage your application configuration in enterprise environments.
 
-It enables you
+It enables you to ...
 
--   to hierachically organize your configuration data to inherit company or department down to user or specific machine level
--   to easily switch between development, stage or production settings
--   to use defaults and optionally expose information log in case
--   to expose warnings or errors in case an application setting is missing
--   to easily use and maintain local node.js packages without the need to embed them as submodules or even deploy them to npm
--   to calculate compound configuration settings based on single or other compound settings
--   to version control your configuration data opposed to environment variables, according to the version specific configuration requirements of your application
--   to easily track missing configurations in your specific configuration file
-
-The `.env` file in the project root folder just requires a single reference to the configuration file in the form:
-
-```
-ENAPSO_CONFIG_FILE = [path_to_config_file]
-```
-
-## Example
-
-```
-ENAPSO_CONFIG_FILE = /git/enapso-config/config/extjs_assistant_alex_imac.js
-```
+-   hierachically organize your configuration data to inherit company or department settings down to user or specific machine level
+-   easily switch between development, stage or production settings, further environments configurable
+-   use defaults and optionally expose information logs in case default settings instead of explicit ones are returned
+-   expose warnings or errors in case an application setting is missing
+-   easily use and maintain local node.js packages without the need to embed them as submodules or even deploy them to npm
+-   calculate compound configuration settings based on single or other compound settings
+-   version control your configuration data opposed to environment variables, according to the version specific configuration requirements of your application
+-   easily track missing configurations in your specific configuration file
+-   securly use sensitive information in environment variables like passwords or api keys in a shared configuration environment and benefit from optional defaults and notifications
 
 ## Installation
 
@@ -41,6 +30,20 @@ Just require the `@innotrade/enapso-config` package as follows:
 
 ```javascript
 require('@innotrade/enapso-config');
+```
+
+### .env file
+
+The `.env` file in the project's root folder just requires a single reference to the configuration file in the form:
+
+```
+ENAPSO_CONFIG_FILE = [path_to_config_file]
+```
+
+### Example
+
+```
+ENAPSO_CONFIG_FILE = /git/enapso-config/config/extjs_assistant_alex_imac.js
 ```
 
 and use it where ever you need, with fields or as entire object:
