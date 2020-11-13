@@ -4,6 +4,7 @@ class EnapsoApiYasirPc2Config extends EnapsoApiConfig {
     constructor(data) {
         super(data);
     }
+    
 }
 
 module.exports = {
