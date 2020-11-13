@@ -1,4 +1,4 @@
-// Innotrade Enapso - Hierarchical Enterprise Configuration Management
+// ENAPSO Enterprise Configuration Management
 // (C) Copyright 2020 Innotrade GmbH, Herzogenrath, NRW, Germany
 // Author: Alexander Schulze
 
@@ -31,7 +31,9 @@ encfg.MODE_DEFAULT = EnapsoConfig.MODE_DEFAULT;
 global.encfg = encfg;
 
 // publish requireEx to global scope for convenience
-global.requireEx = config.requireEx;
+global.requireEx = function (pkgRef) {
+    return config.requireEx(pkgRef);
+};
 
 // and export the loaded configuration object
 module.exports = {

@@ -1,4 +1,4 @@
-// Innotrade Enapso - ENAPSO Enterprise Configuration Management
+// ENAPSO Enterprise Configuration Management
 // (C) Copyright 2020 Innotrade GmbH, Herzogenrath, NRW, Germany
 // Author: Alexander Schulze
 
@@ -10,10 +10,13 @@
 // tenant specific implementations should be made in the root_config.js
 
 class EnapsoConfig {
+    // constants for the various operation modes
     static MODE_DEFAULT = 'default';
     static MODE_DEV = 'dev';
     static MODE_PROD = 'prod';
     static MODE_STAGE = 'stage';
+
+    // list of all supported operation modes
     static SUPPORTED_MODES = [
         EnapsoConfig.MODE_DEFAULT,
         EnapsoConfig.MODE_DEV,
@@ -45,7 +48,21 @@ class EnapsoConfig {
         return this.$mode;
     }
 
-    getModeConfig(obj, field, defaultValue) {}
+    setCallback(cb) {
+        if (typeof cb === 'function') {
+            this.callback = cb;
+        }
+    }
+
+    notify(args) {
+        args = args || {};
+        if (this.callback) {
+            this.callback(args.level, args.message);
+        }
+        if (!args.level) {
+            args.level = 'log';
+        }
+    }
 
     getConfig(path, defaultValue, options) {
         // return a configuration setting specified by its path
@@ -60,14 +77,10 @@ class EnapsoConfig {
                 value = obj[field]['$' + this.$mode];
             }
             if (value === undefined) {
-                if (this.$options.logDefaultUsed) {
-                    console.warn(
-                        'ENAPSO Config: Using default ' +
-                            defaultValue +
-                            ' for ' +
-                            path
-                    );
-                }
+                this.notify({
+                    level: 'warn',
+                    message: 'Using default ' + defaultValue + ' for ' + path
+                });
                 break;
             }
             obj = obj[field];
@@ -94,27 +107,31 @@ class EnapsoConfig {
             // if alternative module path is found try to load that
             // otherwise just report appropriate error
             if (configuredPkgRef === pkgRef) {
-                console.warn(
-                    'ENAPSO Config: ' + configuredPkgRef + ' not found.'
-                );
+                this.notify({
+                    level: 'warn',
+                    message: `${configuredPkgRef} not found.`
+                });
             } else {
                 try {
                     module = require(pkgRef);
-                    console.warn(
-                        'ENAPSO Config: ' +
+                    this.notify({
+                        level: 'warn',
+                        message:
                             configuredPkgRef +
                             ' not found, using default ' +
                             pkgRef +
                             '.'
-                    );
+                    });
                 } catch (err) {
-                    console.error(
-                        'ENAPSO Config: Neither ' +
+                    this.notify({
+                        level: 'error',
+                        message:
+                            'Neither ' +
                             configuredPkgRef +
                             ' nor ' +
                             pkgRef +
                             ' found.'
-                    );
+                    });
                 }
             }
         }

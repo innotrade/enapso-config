@@ -1,4 +1,4 @@
-// Innotrade Enapso - ENAPSO Enterprise Configuration Management
+// ENAPSO Enterprise Configuration Management
 // (C) Copyright 2019-2020 Innotrade GmbH, Herzogenrath, NRW, Germany
 // Author: Alexander Schulze
 
@@ -17,10 +17,10 @@ class CompanyConfig extends RootConfig {
             zipcode: '52134',
             country: 'Germany',
             state: 'NRW',
-            taxNo: '',
-            vatId: '',
-            registerCourt: '',
-            registerNo: ''
+            taxNo: '[TaxNo]',
+            vatId: '[VatId]',
+            registerCourt: '[RegisterCourt]',
+            registerNo: '[RegisterNo]'
         };
     }
 }

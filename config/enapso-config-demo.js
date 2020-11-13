@@ -1,4 +1,4 @@
-// Innotrade Enapso - ENAPSO Enterprise Configuration Management
+// ENAPSO Enterprise Configuration Management
 // (C) Copyright 2020 Innotrade GmbH, Herzogenrath, NRW, Germany
 // Author: Alexander Schulze
 
@@ -8,7 +8,7 @@ class EnapsoConfigDemoConfig extends DepartmentConfig {
     constructor(data) {
         super(data);
         this.application = {
-            name: 'ENAPSO\u26A1boost - Configuration Demo',
+            name: 'ENAPSO\u26A1config - Configuration Demo',
             version: '1.0.0',
             copyrightFrom: '2020',
             copyrightTo: '2020'
@@ -26,13 +26,16 @@ class EnapsoConfigDemoConfig extends DepartmentConfig {
         this.myModeConfig = {
             myModeSetting: 'String value for myDefaultConfig.myDefaultSetting',
             switch1: {
-                $default: 'switch1 default',
                 $dev: 'switch1 in dev mode',
-                $prod: 'switch1 in dev production mode'
+                $prod: 'switch1 in production mode',
+                $default: 'switch1 in default mode'
             }
         };
 
-        this.myAccessToken = process.env.MY_PERSONAL_ACCESS_TOKEN;
+        this.myAccessToken = this.getEnvVar(
+            'MY_PERSONAL_ACCESS_TOKEN',
+            '[MyPersonalAccessTokenNotSet]'
+        );
     }
 }
 

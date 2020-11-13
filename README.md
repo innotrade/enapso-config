@@ -40,10 +40,30 @@ The `.env` file in the project's root folder just requires a single reference to
 ENAPSO_CONFIG_FILE = [path_to_config_file]
 ```
 
-### Example
+You can either specify an absolute path to your configuration file:
 
 ```
-ENAPSO_CONFIG_FILE = /git/enapso-config/config/extjs_assistant_alex_imac.js
+ENAPSO_CONFIG_FILE=/System/Volumes/Data/git/enapso-config/config/enapso-config-demo.js
+```
+
+Alternatively you can specify the path using the `${AppRoot}` variable:
+
+```
+ENAPSO_CONFIG_FILE=${AppRoot}/config/enapso-config-demo.js
+```
+
+### Setting up the enterprise configuration
+
+#### General
+
+```
+ENAPSO_CONFIG_FILE = ${AppRoot}/config/[app]-[user]-[system].js
+```
+
+#### Example
+
+```
+ENAPSO_CONFIG_FILE = ${AppRoot}/config/CompanyApp-AlexanderSchulze-MacBookHomeOffice.js
 ```
 
 and use it where ever you need, with fields or as entire object:
@@ -115,6 +135,8 @@ EnapsoConfig
                 +-- MachineConfig
 ```
 
+## Sensitive data
+
 Do not hard code sensitive data directly in the configuration file but reference to a environment variable.
 
 ```javascript
@@ -136,4 +158,13 @@ const myAccessToken = encfg.getConfig(
     '[no access token configured]'
 );
 console.log('Accessing sensitive data from env variables: ' + myAccessToken);
+```
+
+### Notifications
+
+In case the environment variable is not set, as a developer, you will not get any notification.
+If you want to get notified, you can wrap the reference by a call to `this.getEnvVar` like this:
+
+```javascript
+this.myAccessToken = this.getEnvVar(process.env.MY_PERSONAL_ACCESS_TOKEN);
 ```

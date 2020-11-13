@@ -1,5 +1,5 @@
-// Innotrade Enapso - ENAPSO Enterprise Configuration Management
-// (C) Copyright 2019-2020 Innotrade GmbH, Herzogenrath, NRW, Germany
+// ENAPSO Enterprise Configuration Management
+// (C) Copyright 2020 Innotrade GmbH, Herzogenrath, NRW, Germany
 // Author: Alexander Schulze
 
 // here only configurations across an entire department are implemented
