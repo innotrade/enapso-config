@@ -34,7 +34,7 @@ class RootConfig extends EnapsoConfig {
         const res =
             '(C) Copyright ' +
             (fromString ? fromString : this.application.copyrightFrom) +
-            (toString !== fromString
+            (toString !== undefined && toString !== fromString
                 ? '-' + (toString ? toString : this.application.copyrightTo)
                 : '') +
             ' ' +
