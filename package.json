@@ -1,6 +1,6 @@
 {
     "name": "@innotrade/enapso-config",
-    "version": "1.2.6",
+    "version": "1.2.7",
     "description": "ENAPSO Enterprise Configuration Management",
     "main": "index.js",
     "scripts": {

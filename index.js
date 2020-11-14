@@ -10,6 +10,12 @@ const { RootConfig } = require('./config/root_config.js');
 process.env.ENAPSO_CONFIG_FILE =
     process.env.ENAPSO_CONFIG_FILE || './config/root_config.js';
 
+const encfg = {
+    EnapsoConfig,
+    RootConfig
+};
+global.encfg = encfg;
+
 // load the configuration from the user, application or machine specific config file
 const path = process.env.ENAPSO_CONFIG_FILE.replace(
     '${AppRoot}',
@@ -22,12 +28,16 @@ const config = new configClass.config();
 process.env.ENAPSO_CONFIG_MODE = process.env.ENAPSO_CONFIG_MODE || 'default';
 config.setMode(process.env.ENAPSO_CONFIG_MODE);
 
-const encfg = config;
+encfg = config;
 encfg.config = config;
+encfg.packages = config.packages;
 encfg.MODE_DEV = EnapsoConfig.MODE_DEV;
 encfg.MODE_PROD = EnapsoConfig.MODE_PROD;
 encfg.MODE_STAGE = EnapsoConfig.MODE_STAGE;
 encfg.MODE_DEFAULT = EnapsoConfig.MODE_DEFAULT;
+
+encfg.EnapsoConfig = EnapsoConfig;
+encfg.RootConfig = RootConfig;
 
 // publish the global encfg instance
 global.encfg = encfg;
