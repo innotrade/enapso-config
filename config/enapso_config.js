@@ -125,14 +125,14 @@ class EnapsoConfig {
             // if alternative module path is found try to load that
             // otherwise just report appropriate error
             if (configuredPkgRef === pkgRef) {
-                this.notify({
+                encfg.notify({
                     level: 'warn',
                     message: `${configuredPkgRef} not found.`
                 });
             } else {
                 try {
                     module = require(pkgRef);
-                    this.notify({
+                    encfg.notify({
                         level: 'warn',
                         message:
                             configuredPkgRef +
@@ -141,7 +141,7 @@ class EnapsoConfig {
                             '.'
                     });
                 } catch (err) {
-                    this.notify({
+                    encfg.notify({
                         level: 'error',
                         message:
                             'Neither ' +

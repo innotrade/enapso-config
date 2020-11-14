@@ -33,6 +33,7 @@ encfg.EnapsoConfig = EnapsoConfig;
 encfg.RootConfig = RootConfig;
 encfg.config = config;
 encfg.packages = config.packages;
+encfg.notify = config.notify;
 encfg.MODE_DEV = EnapsoConfig.MODE_DEV;
 encfg.MODE_PROD = EnapsoConfig.MODE_PROD;
 encfg.MODE_STAGE = EnapsoConfig.MODE_STAGE;
