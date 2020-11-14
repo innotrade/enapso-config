@@ -10,7 +10,7 @@ const { RootConfig } = require('./config/root_config.js');
 process.env.ENAPSO_CONFIG_FILE =
     process.env.ENAPSO_CONFIG_FILE || './config/root_config.js';
 
-const encfg = {
+let encfg = {
     EnapsoConfig,
     RootConfig
 };
@@ -29,15 +29,14 @@ process.env.ENAPSO_CONFIG_MODE = process.env.ENAPSO_CONFIG_MODE || 'default';
 config.setMode(process.env.ENAPSO_CONFIG_MODE);
 
 encfg = config;
+encfg.EnapsoConfig = EnapsoConfig;
+encfg.RootConfig = RootConfig;
 encfg.config = config;
 encfg.packages = config.packages;
 encfg.MODE_DEV = EnapsoConfig.MODE_DEV;
 encfg.MODE_PROD = EnapsoConfig.MODE_PROD;
 encfg.MODE_STAGE = EnapsoConfig.MODE_STAGE;
 encfg.MODE_DEFAULT = EnapsoConfig.MODE_DEFAULT;
-
-encfg.EnapsoConfig = EnapsoConfig;
-encfg.RootConfig = RootConfig;
 
 // publish the global encfg instance
 global.encfg = encfg;
