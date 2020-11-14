@@ -30,20 +30,6 @@ class RootConfig extends EnapsoConfig {
         return this.application.name + ' ' + this.application.version;
     }
 
-    getEnvVar(envVar, defaultValue) {
-        let value = process.env[envVar];
-        if (value === undefined) {
-            const msg = `ENAPSO Config: Environment variable ${envVar} not set, returning default: ${defaultValue}`;
-            if (defaultValue !== undefined) {
-                console.warn(msg);
-            } else {
-                console.error(msg);
-            }
-            value = defaultValue;
-        }
-        return value;
-    }
-
     getCopyrightString(fromString, toString) {
         const res =
             '(C) Copyright ' +

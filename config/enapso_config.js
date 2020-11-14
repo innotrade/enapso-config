@@ -48,6 +48,20 @@ class EnapsoConfig {
         return this.$mode;
     }
 
+    getEnvVar(envVar, defaultValue) {
+        let value = process.env[envVar];
+        if (value === undefined) {
+            const msg = `ENAPSO Config: Environment variable ${envVar} not set, returning default: ${defaultValue}`;
+            if (defaultValue !== undefined) {
+                console.warn(msg);
+            } else {
+                console.error(msg);
+            }
+            value = defaultValue;
+        }
+        return value;
+    }
+
     setCallback(cb) {
         if (typeof cb === 'function') {
             this.callback = cb;

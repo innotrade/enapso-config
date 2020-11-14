@@ -6,14 +6,16 @@
 require('dotenv').config();
 
 const { EnapsoConfig } = require('./config/enapso_config.js');
+const { RootConfig } = require('./config/root_config.js');
 process.env.ENAPSO_CONFIG_FILE =
     process.env.ENAPSO_CONFIG_FILE || './config/root_config.js';
 
 // load the configuration from the user, application or machine specific config file
-const configClass = require(process.env.ENAPSO_CONFIG_FILE.replace(
+const path = process.env.ENAPSO_CONFIG_FILE.replace(
     '${AppRoot}',
     __dirname
-));
+).replace('${EnapsoConfigBase}', process.env.ENAPSO_CONFIG_BASE);
+const configClass = require(path);
 const config = new configClass.config();
 
 // set the configuration mode
@@ -37,5 +39,7 @@ global.requireEx = function (pkgRef) {
 
 // and export the loaded configuration object
 module.exports = {
-    config
+    config,
+    EnapsoConfig,
+    RootConfig
 };
