@@ -13,6 +13,18 @@ class DepartmentConfig extends CompanyConfig {
         this.company.department = 'Software & IT Consulting';
 
         this.packages = {
+            '@innotrade/enapso-jsast': {
+                dev: path.normalize(module.path + '/../../enapso-jsast')
+            },
+            '@innotrade/enapso-resources': {
+                dev: path.normalize(module.path + '/../../enapso-resources')
+            },
+            '@innotrade/enapso-wshub': {
+                dev: path.normalize(module.path + '/../../enapso-wshub')
+            },
+            '@innotrade/enapso-js-tools': {
+                dev: path.normalize(module.path + '/../../enapso-js-tools')
+            },
             '@innotrade/enapso-graphdb-client': {
                 dev: path.normalize(
                     module.path + '/../../enapso-graphdb-client'
@@ -20,6 +32,12 @@ class DepartmentConfig extends CompanyConfig {
             },
             '@innotrade/enapso-graphdb-admin': {
                 dev: path.normalize(module.path + '/../../enapso-graphdb-admin')
+            },
+            '@innotrade/enapso-orm': {
+                dev: path.normalize(module.path + '/../../enapso-orm')
+            },
+            '@innotrade/enapso-sparql-tools': {
+                dev: path.normalize(module.path + '/../../enapso-sparql-tools')
             }
         };
     }
