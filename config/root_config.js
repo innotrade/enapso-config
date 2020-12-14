@@ -31,11 +31,17 @@ class RootConfig extends EnapsoConfig {
     }
 
     getCopyrightString(fromString, toString) {
+        if (fromString === undefined) {
+            fromString = this.application.copyrightFrom;
+        }
+        if (toString === undefined) {
+            toString = this.application.copyrightTo;
+        }
         const res =
             '(C) Copyright ' +
             (fromString ? fromString : this.application.copyrightFrom) +
             (toString !== undefined && toString !== fromString
-                ? '-' + (toString ? toString : this.application.copyrightTo)
+                ? '-' + toString
                 : '') +
             ' ' +
             this.company.name +
